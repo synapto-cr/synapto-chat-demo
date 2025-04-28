@@ -13,7 +13,7 @@ jobs:
     - name: Checkout master branch
       uses: actions/checkout@v4
 
-    - name: Configurar Git
+    - name: Configurar Git en master
       run: |
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor }}@users.noreply.github.com"
@@ -55,6 +55,9 @@ jobs:
     - name: Commit y Push a gh-pages
       run: |
         cd output
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor }}@users.noreply.github.com"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
         git add .
         git commit -m "Sync automático: actualizar, agregar y borrar demos, mantener CNAME" || echo "No hay cambios"
         git push origin gh-pages
