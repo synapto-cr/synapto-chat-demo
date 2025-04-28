@@ -1,4 +1,4 @@
-name: Deploy múltiple carpetas a GitHub Pages con CNAME
+name: Deploy múltiple carpetas a GitHub Pages con separación limpia
 
 on:
   push:
@@ -18,49 +18,43 @@ jobs:
         git config user.name "${{ github.actor }}"
         git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-    - name: Clonar gh-pages branch
+    - name: Clonar gh-pages branch en carpeta output/
       run: |
-        git clone --single-branch --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages || mkdir gh-pages
+        git clone --single-branch --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} output || mkdir output
 
     - name: Sincronizar carpetas (borrar las eliminadas)
       run: |
-        # Listar carpetas en master
         MAIN_DIRS=$(ls -d */ | sed 's#/##')
-        
-        cd gh-pages
-        
-        # Borrar carpetas que ya no existen en master
+        cd output
         for dir in */; do
           dir=${dir%/}
-          if [ "$dir" != "CNAME" ]; then  # No borrar el CNAME
+          if [ "$dir" != "CNAME" ]; then
             if ! echo "$MAIN_DIRS" | grep -q "^$dir$"; then
               echo "Borrando demo eliminado: $dir"
               rm -rf "$dir"
             fi
           fi
         done
-        
         cd ..
 
     - name: Copiar nuevas carpetas y actualizar existentes
       run: |
         for dir in $(ls -d */); do
           dir=${dir%/}
-          if [ "$dir" != "gh-pages" ]; then
+          if [ "$dir" != "output" ]; then
             echo "Actualizando demo: $dir"
-            mkdir -p gh-pages/$dir
-            cp -r $dir/* gh-pages/$dir/
+            mkdir -p output/$dir
+            cp -r $dir/* output/$dir/
           fi
         done
-      
 
     - name: Copiar archivo CNAME
       run: |
-        cp CNAME gh-pages/CNAME
+        cp CNAME output/CNAME
 
-    - name: Commit y Push
+    - name: Commit y Push a gh-pages
       run: |
-        cd gh-pages
+        cd output
         git add .
         git commit -m "Sync automático: actualizar, agregar y borrar demos, mantener CNAME" || echo "No hay cambios"
         git push origin gh-pages
