@@ -46,10 +46,13 @@ jobs:
       run: |
         for dir in $(ls -d */); do
           dir=${dir%/}
-          echo "Actualizando demo: $dir"
-          mkdir -p gh-pages/$dir
-          cp -r $dir/* gh-pages/$dir/
+          if [ "$dir" != "gh-pages" ]; then
+            echo "Actualizando demo: $dir"
+            mkdir -p gh-pages/$dir
+            cp -r $dir/* gh-pages/$dir/
+          fi
         done
+      
 
     - name: Copiar archivo CNAME
       run: |
