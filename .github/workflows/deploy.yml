@@ -1,0 +1,63 @@
+name: Deploy múltiple carpetas a GitHub Pages con CNAME
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout master branch
+      uses: actions/checkout@v4
+
+    - name: Configurar Git
+      run: |
+        git config user.name "${{ github.actor }}"
+        git config user.email "${{ github.actor }}@users.noreply.github.com"
+
+    - name: Clonar gh-pages branch
+      run: |
+        git clone --single-branch --branch gh-pages https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages || mkdir gh-pages
+
+    - name: Sincronizar carpetas (borrar las eliminadas)
+      run: |
+        # Listar carpetas en master
+        MAIN_DIRS=$(ls -d */ | sed 's#/##')
+        
+        cd gh-pages
+        
+        # Borrar carpetas que ya no existen en master
+        for dir in */; do
+          dir=${dir%/}
+          if [ "$dir" != "CNAME" ]; then  # No borrar el CNAME
+            if ! echo "$MAIN_DIRS" | grep -q "^$dir$"; then
+              echo "Borrando demo eliminado: $dir"
+              rm -rf "$dir"
+            fi
+          fi
+        done
+        
+        cd ..
+
+    - name: Copiar nuevas carpetas y actualizar existentes
+      run: |
+        for dir in $(ls -d */); do
+          dir=${dir%/}
+          echo "Actualizando demo: $dir"
+          mkdir -p gh-pages/$dir
+          cp -r $dir/* gh-pages/$dir/
+        done
+
+    - name: Copiar archivo CNAME
+      run: |
+        cp CNAME gh-pages/CNAME
+
+    - name: Commit y Push
+      run: |
+        cd gh-pages
+        git add .
+        git commit -m "Sync automático: actualizar, agregar y borrar demos, mantener CNAME" || echo "No hay cambios"
+        git push origin gh-pages
