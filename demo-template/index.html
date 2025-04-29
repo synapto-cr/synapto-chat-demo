@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Demo de Chatbot</title>
+  <title>Demo de Chatbot - NOMBREEMPRESA</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
+
 <body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
 
   <!-- REEMPLAZAR NOMBREEMPRESA-->
@@ -12,12 +15,36 @@
   <!-- REEMPLAZAR SCRIPT -->
 
   <h1>Demo de Chatbot</h1>
-  <img src="https://drive.google.com/thumbnail?id=1sPZWKhf3wFsZug2e-JFxr3SvZ3kwsnUO" style="max-width: 250px; margin-bottom: 20px; margin-top: 10px">
+  <img src="https://drive.google.com/thumbnail?id=1sPZWKhf3wFsZug2e-JFxr3SvZ3kwsnUO"
+    style="max-width: 250px; margin-bottom: 20px; margin-top: 10px">
 
   <p>Esta es una página de demostración del chatbot para <strong>NOMBREEMPRESA</strong>.</p>
   <p>Puede interactuar con el asistente en la esquina de la página.</p>
 
+
+  <script id="markdown-source" type="text/markdown">
+# ¿Qué puede responder el bot?
+El bot fue entrenado con la siguiente información:
+
+==========
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam mi, mattis at dignissim vel, porttitor ut urna. Sed nec urna mi. Proin ut mi ultrices magna fermentum lobortis vitae non erat. Nunc vestibulum venenatis enim, sed venenatis velit tincidunt nec. Curabitur placerat aliquet nisl sit amet efficitur. Sed semper quam pellentesque, blandit arcu eu, luctus lectus. Donec vel dui condimentum, auctor sem quis, sollicitudin est. Duis tristique finibus finibus. Pellentesque finibus, mi quis tempus tempus, neque massa tempus nibh, eget ornare sem nunc eget libero. Aliquam sodales neque nec semper ullamcorper.
+
+Sed a nisi tortor. Vivamus id neque ac enim pretium laoreet. Sed sit amet consectetur massa. Suspendisse venenatis, magna sit amet convallis fringilla, lorem lacus faucibus libero, vel ornare erat neque in est. Sed semper felis vitae fringilla tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae purus bibendum lacus iaculis suscipit. Sed molestie nibh libero, id pulvinar augue finibus id. Fusce lobortis lacinia condimentum. Ut sem quam, suscipit sed convallis rhoncus, viverra dignissim arcu. Proin eget mi nec nunc tempor luctus molestie vitae leo. Sed ultrices leo mauris, ut consectetur dui ullamcorper vitae.
+    
+    </script>
+
+    <div id="resultado" style="border:1px solid #ccc; padding:10px;text-align:left;margin-top: 30px;display: inline-block;max-width: 800px;"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const markdownText = document.getElementById('markdown-source').textContent;
+      const html = marked.parse(markdownText);
+      document.getElementById('resultado').innerHTML = html;
+    });
+  </script>
   <script src="https://cdn.pulse.is/livechat/loader.js" data-live-chat-id="680ff063e12975c68d0fb038" async></script>
 
 </body>
+
 </html>
