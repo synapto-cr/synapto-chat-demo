@@ -6,9 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Demo de Chatbot - UP Costa Rica</title>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    #resultado {
+      max-width: 100%;
+      overflow-y: scroll;
+    }
+
+    @media (min-width: 768px) {
+      #resultado {
+        max-width: 800px;
+      }
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+<body style="font-family: Arial, sans-serif; text-align: center; margin: 0px; padding: 50px 5px;">
 
   <h1>Demo de Chatbot</h1>
 
@@ -26,101 +38,120 @@ El bot fue entrenado con la siguiente información:
 
 ==========
 
-**INFORMACIÓN DE CONTACTO:**
+## INFORMACIÓN DE CONTACTO
 
-Correo electrónico: info@unlimitedcr.com
-
-Teléfono/Whatsapp: +506 8792-3450
-
-Sitio web: https://unlimitedcr.com
-
+Correo electrónico: info@unlimitedcr.com  
+Teléfono/Whatsapp: +506 8792-3450  
+Sitio web: https://unlimitedcr.com  
 Ubicación: San José, Costa Rica
 
-==========
+---
 
-**¿QUIÉNES SOMOS?**
+## ¿QUIÉNES SOMOS?
 
-UP Costa Rica es una empresa de producción y logística de eventos deportivos con más de 14 años de experiencia.
-Organizamos triatlones, carreras de montaña, circuitos de aguas abiertas y eventos multideportivos familiares.
+UP Costa Rica es una empresa de producción y logística de eventos deportivos con más de 14 años de experiencia.  
+Organizamos triatlones, carreras de montaña, circuitos de aguas abiertas y eventos multideportivos familiares.  
 Trabajamos bajo principios de sostenibilidad, seguridad y mejora continua.
 
-==========
+---
 
-**EVENTOS PRINCIPALES:**
+## EVENTOS PRINCIPALES
 
-**SERIE TRIATLÓN BAC**
+### SERIE TRIATLÓN BAC
 
-Triatlones: en El Coco (Fecha: 11 de Mayol 2025), Paseo de los Turistas (Fecha: 20 de Julio 2025) y Marina Pez Vela (Quepos) (Fecha: 23 de Noviembre 2025).
+Triatlones: en El Coco (Fecha: 11 de Mayo 2025), Paseo de los Turistas (Fecha: 20 de Julio 2025) y Marina Pez Vela (Quepos) (Fecha: 23 de Noviembre 2025).
 
 Modalidades: Sprint, Estándar y Coco (larga distancia).
 
-Más información: https://unlimitedcr.com/serie-triatlón-bac
-
-Reglamento: https://img1.wsimg.com/blobby/go/49bfda95-fc0d-4480-b1da-a2f3d80b195f/downloads/Reglamento%20Serie%20Triatlon%20%202024.pdf?ver=1744145105121
-
+Más información: https://unlimitedcr.com/serie-triatlón-bac  
+Reglamento: https://img1.wsimg.com/blobby/go/49bfda95-fc0d-4480-b1da-a2f3d80b195f/downloads/Reglamento%20Serie%20Triatlon%20%202024.pdf?ver=1744145105121  
 Inscripciones: https://www.eticket.cr/eventos.aspx?categoria=3
 
-Categorías individuales: Junior 16-19 años (Sprint), Élite (Sprint), 18-23 años (Sprint, Estándar, Coco), 24-29 años (Sprint, Estándar, Coco), 30-34 años (Sprint, Estándar, Coco), 35-39 años (Sprint, Estándar, Coco), 40-44 años (Sprint, Estándar, Coco), 45-49 años (Sprint, Estándar, Coco), 50-55 años (Sprint, Estándar, Coco), 55-59 años (Sprint, Estándar, Coco), 60 años o más (Sprint, Estándar, Coco)
+Categorías individuales:
+- Junior 16-19 años (Sprint)
+- Élite (Sprint)
+- 18-23 años (Sprint, Estándar, Coco)
+- 24-29 años (Sprint, Estándar, Coco)
+- 30-34 años (Sprint, Estándar, Coco)
+- 35-39 años (Sprint, Estándar, Coco)
+- 40-44 años (Sprint, Estándar, Coco)
+- 45-49 años (Sprint, Estándar, Coco)
+- 50-55 años (Sprint, Estándar, Coco)
+- 55-59 años (Sprint, Estándar, Coco)
+- 60 años o más (Sprint, Estándar, Coco)
 
-Categorías por equipos: Sprint, Estándar, Coco
+Categorías por equipos:
+- Sprint
+- Estándar
+- Coco
 
-**CIRCUITO AGUAS ABIERTAS BAC**
+### CIRCUITO AGUAS ABIERTAS BAC
 
 Competencias de natación en Playa Herradura (Fecha: 23 de Marzo 2025), Reserva Conchal (Fecha: 7 de Junio 2025), Puerto San Luis (Arenal) (Fecha: 27 de Julio 2025) y Quepos (Fecha: 7 de Setiembre 2025).
 
 Distancias: 400 metros, 800 metros, 1500 metros, 3000 metros y 5000 metros.
 
-Más información: https://unlimitedcr.com/circuito-aguas-abiertas
-
+Más información: https://unlimitedcr.com/circuito-aguas-abiertas  
 Reglamento: https://img1.wsimg.com/blobby/go/49bfda95-fc0d-4480-b1da-a2f3d80b195f/downloads/REGLAMENTO%20Circuito%20Aguas%20Abiertas%202024.pdf?ver=1744145103422
 
-Categorías: Infantiles A: 09-10 años, Infantiles B: 11-12 años, Recreativos: 13 años o más, Juvenil: 13-17 años,
-18-23 años, 24-29 años, 30-34 años, 35-39 años, 40-44 años, 45-49 años, 50-54 años, 55-59 años, 60-64 años, 65-69 años, 70 años o más.
+Categorías:
+- Infantiles A: 09-10 años
+- Infantiles B: 11-12 años
+- Recreativos: 13 años o más
+- Juvenil: 13-17 años
+- 18-23 años
+- 24-29 años
+- 30-34 años
+- 35-39 años
+- 40-44 años
+- 45-49 años
+- 50-54 años
+- 55-59 años
+- 60-64 años
+- 65-69 años
+- 70 años o más
 
-**TRILOGÍA MOON RUN BAC**
+### TRILOGÍA MOON RUN BAC
 
 Carreras de montaña en Dominical (Fecha: 15 de Marzo 2025), Arenal (Fecha: 27 de Setiembre 2025) y Monteverde (Fecha: 27 de Setiembre 2025).
 
-Más información: https://unlimitedcr.com/trilogía-moon-run
-
+Más información: https://unlimitedcr.com/trilogía-moon-run  
 Nota: Las categorías y distancias específicas para este están en el link de información.
 
-**COSTA RICA OFF ROAD RACES BAC**
+### COSTA RICA OFF ROAD RACES BAC
 
-Fecha: 7 y 8 de Junio, 2015.
+Fecha: 7 y 8 de Junio, 2025.
 
 Evento familiar multideportivo: Triatlón Cross, MTB, Gravel y Aguas Abiertas.
 
-Más información: https://unlimitedcr.com/off-road-races-bac-2
-
+Más información: https://unlimitedcr.com/off-road-races-bac-2  
 Nota: Las categorías y distancias específicas para este evento están en el link de información.
 
-==========
+---
 
-**DESCARGAS IMPORTANTES:**
+## DESCARGAS IMPORTANTES
 
-Podés descargar reglamentos, mapas y documentos en:
-https://unlimitedcr.com/descargas
+Podés descargar reglamentos, mapas y documentos en: https://unlimitedcr.com/descargas
 
-==========
+---
 
-**INFORMACIÓN ADICIONAL:**
+## INFORMACIÓN ADICIONAL
 
-Nuestros eventos incluyen manejo responsable de residuos y reciclaje.
-Más de 52 mil atletas han participado en eventos de UP Costa Rica.
-Más de 130 eventos organizados en diversas comunidades.
+- Nuestros eventos incluyen manejo responsable de residuos y reciclaje.
+- Más de 52 mil atletas han participado en eventos de UP Costa Rica.
+- Más de 130 eventos organizados en diversas comunidades.
 
-==========
+---
 
-**REDES SOCIALES OFICIALES:**
+## REDES SOCIALES OFICIALES
 
-Facebook: https://www.facebook.com/unlimitedcr
-Instagram: https://www.instagram.com/unlimitedcr
+Facebook: https://www.facebook.com/unlimitedcr  
+Instagram: https://www.instagram.com/unlimitedcr  
 YouTube: https://www.youtube.com/user/UnlimitedCR/videos
 
   </script>
 
-  <div id="resultado" style="border:1px solid #ccc; padding:10px;text-align:left;margin-top: 30px;display: inline-block;max-width: 800px;"></div>
+  <div id="resultado" style="border:1px solid #ccc; padding:10px;text-align:left;margin-top: 30px;display: inline-block;"></div>
 
   <script>
     window.addEventListener('DOMContentLoaded', function () {
