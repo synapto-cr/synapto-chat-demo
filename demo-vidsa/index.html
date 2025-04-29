@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Demo de Chatbot - VIDSA</title>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    #resultado {
+      max-width: 100%;
+      overflow-y: scroll;
+    }
+
+    @media (min-width: 768px) {
+      #resultado {
+        max-width: 800px;
+      }
+    }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px;">
+
+<body style="font-family: Arial, sans-serif; text-align: center; margin: 0px; padding: 50px 5px;">
 
   <!-- REEMPLAZAR NOMBREEMPRESA-->
   <!-- REEMPLAZAR IMG SRC-->
   <!-- REEMPLAZAR SCRIPT -->
 
   <h1>Demo de Chatbot</h1>
-  <img src="https://vidsa.cr/wp-content/uploads/2024/03/logo-VIDSA-ai.webp" style="max-width: 250px; margin-bottom: 20px; margin-top: 10px">
+  <img src="https://vidsa.cr/wp-content/uploads/2024/03/logo-VIDSA-ai.webp"
+    style="max-width: 250px; margin-bottom: 20px; margin-top: 10px">
 
   <p>Esta es una página de demostración del chatbot para <strong>VIDSA</strong>.</p>
   <p>Puede interactuar con el asistente en la esquina de la página.</p>
@@ -29,7 +44,8 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed diam mi, mattis at 
 Sed a nisi tortor. Vivamus id neque ac enim pretium laoreet. Sed sit amet consectetur massa. Suspendisse venenatis, magna sit amet convallis fringilla, lorem lacus faucibus libero, vel ornare erat neque in est. Sed semper felis vitae fringilla tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae purus bibendum lacus iaculis suscipit. Sed molestie nibh libero, id pulvinar augue finibus id. Fusce lobortis lacinia condimentum. Ut sem quam, suscipit sed convallis rhoncus, viverra dignissim arcu. Proin eget mi nec nunc tempor luctus molestie vitae leo. Sed ultrices leo mauris, ut consectetur dui ullamcorper vitae.
   </script>
 
-  <div id="resultado" style="border:1px solid #ccc; padding:10px;text-align:left;margin-top: 30px;display: inline-block;max-width: 800px;"></div>
+  <div id="resultado"
+    style="border:1px solid #ccc; padding:10px;text-align:left;margin-top: 30px;display: inline-block;"></div>
 
   <script>
     window.addEventListener('DOMContentLoaded', function () {
@@ -42,4 +58,5 @@ Sed a nisi tortor. Vivamus id neque ac enim pretium laoreet. Sed sit amet consec
   <script src="https://cdn.pulse.is/livechat/loader.js" data-live-chat-id="680ff3dcda545fb40c031ccb" async></script>
 
 </body>
+
 </html>
