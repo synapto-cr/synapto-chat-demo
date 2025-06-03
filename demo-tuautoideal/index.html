@@ -7,13 +7,17 @@
   <title>Demo de Chatbot - TuAutoIdeal</title>
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
-    #resultado {
+    .wrapper {
       max-width: 100%;
+      display: inline-block;
+    }
+
+    #resultado {
       overflow-x: scroll;
     }
 
     @media (min-width: 768px) {
-      #resultado {
+      .wrapper {
         max-width: 800px;
       }
     }
@@ -33,25 +37,142 @@
   <p>Esta es una página de demostración del chatbot para <strong>TuAutoIdeal</strong>.</p>
   <p>Puede interactuar con el asistente en la esquina de la página.</p>
 
+  <div style="background-color: #f0f4f8; padding: 3em; margin: 1em 0; font-family: sans-serif;">
+    <div class="wrapper" style="text-align: left;">
+      <p style="margin: 0; color: #0c213f; font-weight: bold; font-size: 1.1em;">
+        ⚠️ AVISO IMPORTANTE
+      </p>
+      <br>
+      <p style="margin-top: 0.5em; color: #333;">
+        Este es un <strong>demo funcional</strong> diseñado para demostrar el potencial de automatización y atención al
+        cliente mediante inteligencia artificial.<br><br>   
+        🔹 Podría presentar <strong>comportamientos o respuestas inconsistentes</strong> que no reflejan con exactitud
+        la lógica del negocio.<br>
+        🔹 Algunas funcionalidades, procesos o datos pueden estar <strong>simulados o incompletos</strong>.<br>
+        🔹 No representa la experiencia final del producto, sino una <strong>demostración de capacidades</strong>.
+      </p>
+    </div>
+
+  </div>
+
   <script id="markdown-source" type="text/markdown">
 
 # Funciones del Asistente Virtual
-⚠ IMPORTANTE: El bot responde en base a la información proporcionada aquí abajo. Esto es un DEMO, por lo tanto la información del negocio pordría NO estar completa. La personalidad y manera de responder del bot no está adaptada a la manera del negocio.
+
 - Atiende de manera formal, usando español costarricense.
-- Responde preguntas basado en la información del negocio proporcionada aquí abajo.
+- Responde preguntas basado en la información proporcionada aquí abajo.
 - Se le puede pedir una cotización, donde para efectos del DEMO levanta información basica del cliente y del pedido para luego pasarla a un agente.
 - Podés solicitarle finalizar la conversación en cualquier momento.
 
 
-# ¿Qué puede responder el bot?
-El bot fue entrenado con la siguiente información:
+# Ejemplos de: ¿Qué puede responder el bot?
 
 ==========
-    
-## INFORMACIÓN DE VIDSA
+
+## 🚗 Inventario Ejemplo
+
+- **Toyota Corolla 2018**  
+  Sedán compacto, motor 1.8L (4 cilindros), transmisión automática, 72,000 km  
+  💵 Precio: $43,000 USD  
+  📌 Estado: Excelente, con garantía y revisión completa
+
+- **Hyundai Tucson 2017**  
+  SUV mediano, motor 2.0L (4 cilindros), transmisión automática, 89,000 km  
+  💵 Precio: $49,800 USD  
+  📌 Estado: Muy bueno, ideal para familia
+
+- **Kia Picanto 2020**  
+  Hatchback económico, motor 1.0L (3 cilindros), transmisión manual, 28,000 km  
+  💵 Precio: $22,200 USD  
+  📌 Estado: Excelente, bajo consumo de combustible
+
+- **Mazda 3 2019**  
+  Sedán deportivo, motor 2.0L Skyactiv, transmisión automática, 60,000 km  
+  💵 Precio: $46,800 USD  
+  📌 Estado: Muy bueno, elegante y tecnológico
+
+- **Suzuki Vitara 2016**  
+  SUV compacto 4x4, motor 1.6L, transmisión manual, 95,000 km  
+  💵 Precio: $41,400 USD  
+  📌 Estado: Bueno, ideal para viajes y caminos rurales
+
+- **Nissan Versa 2021**  
+  Sedán, motor 1.6L (4 cilindros), transmisión CVT, 18,000 km  
+  💵 Precio: $44,000 USD  
+  📌 Estado: Como nuevo, muy cómodo y amplio
+
+- **Ford Ranger XLT 2015**  
+  Pickup doble cabina, motor 3.2L Turbo Diesel, transmisión manual (6 velocidades), 120,000 km  
+  💵 Precio: $52,200 USD  
+  📌 Estado: Muy bueno, potencia y capacidad de carga
+
+- **Honda CR-V 2018**  
+  SUV mediano, motor 2.4L, transmisión automática, 78,000 km  
+  💵 Precio: $56,200 USD  
+  📌 Estado: Excelente, ideal para uso familiar y ciudad
+
+- **Chevrolet Spark GT 2019**  
+  Hatchback, motor 1.2L, transmisión manual, 35,000 km  
+  💵 Precio: $23,500 USD  
+  📌 Estado: Muy bueno, ideal para ciudad y parqueo fácil
+
+- **BMW X1 2016**  
+  SUV premium, motor 2.0L TwinPower Turbo, transmisión automática, 82,000 km  
+  💵 Precio: $67,400 USD  
+  📌 Estado: Muy bueno, lujo y confort europeo
+
+   
+## Preguntas Ejemplo
+### 🚗 Inventario y disponibilidad
+- ¿Qué carros tienen disponibles?
+- ¿Tienen sedanes automáticos?
+- ¿Cuáles SUV tienen en venta?
+- ¿Tienen algún carro que consuma poca gasolina?
+- ¿Tienen carros para familia?
+- ¿Tienen pickups?
+- ¿Todavía tienen disponible el Toyota Corolla 2018?
+- ¿Qué modelos tienen por menos de $25,000?
+
+### 📊 Detalles técnicos de un modelo específico
+- ¿Qué motor tiene el Mazda 3 2019?
+- ¿El Hyundai Tucson 2017 es 4x4?
+- ¿Cuánto kilometraje tiene el Kia Picanto 2020?
+- ¿Qué transmisión tiene el Ford Ranger XLT 2015?
+- ¿Qué incluye el precio del BMW X1 2016?
+- ¿Ese carro tiene garantía?
+
+### 💵 Financiamiento
+- ¿Dan financiamiento?
+- ¿Cuáles son los requisitos para financiar un carro?
+- ¿Cuál sería la cuota mensual para el Nissan Versa 2021?
+- ¿Puedo financiar si no tengo historial crediticio?
+- ¿Trabajan con algún banco?
+- ¿Puedo pagar una parte cash y financiar el resto?
+
+### 📞 Visitas y pruebas de manejo
+- ¿Dónde están ubicados?
+- ¿Puedo pasar a ver los carros?
+- ¿Puedo hacer una prueba de manejo?
+- ¿Qué horarios tienen?
+- ¿Puedo hacer cita para mañana?
+- ¿Qué necesito llevar para agendar una visita?
+
+### 🔁 Entrega de auto como parte del pago (trade-in)
+- ¿Reciben carros usados como parte de pago?
+- ¿Cuánto me darían por un Honda Civic 2015?
+- ¿Cómo es el proceso si quiero entregar mi carro?
+- ¿Puedo llevar mi carro para que lo revisen?
+
+### 📦 Generales o de contacto
+- ¿Cuál es el horario de atención?
+- ¿Tienen página web?
+- ¿Puedo hablar con un asesor por teléfono?
+- ¿Dónde puedo ver fotos de los vehículos?
+- ¿Cuánto tiempo duran en entregar el carro después de la compra?
+
   </script>
 
-  <div id="resultado"
+  <div id="resultado" class="wrapper"
     style="border:1px solid #ccc; padding:10px;text-align:left;margin-top: 30px;display: inline-block;"></div>
 
   <script>
